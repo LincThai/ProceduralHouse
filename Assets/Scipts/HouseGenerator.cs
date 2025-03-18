@@ -16,7 +16,11 @@ public class HouseGenerator : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        // random number generation
+        numOfFloors = Random.Range(1, 4);
+        numOfRooms = Random.Range(0, 10);
+
+        Debug.Log("Floors = " + numOfFloors + "Rooms = " + numOfRooms);
     }
 
     // Update is called once per frame

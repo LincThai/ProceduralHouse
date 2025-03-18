@@ -20,7 +20,7 @@ public class HouseGenerator : MonoBehaviour
         numOfFloors = Random.Range(1, 4);
         numOfRooms = Random.Range(0, 10);
 
-        Debug.Log("Floors = " + numOfFloors + "Rooms = " + numOfRooms);
+        Debug.Log("Floors = " + numOfFloors + " Rooms = " + numOfRooms);
     }
 
     // Update is called once per frame

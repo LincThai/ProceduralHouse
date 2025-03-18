@@ -18,14 +18,27 @@ public class HouseGenerator : MonoBehaviour
     {
         // random number generation
         numOfFloors = Random.Range(1, 4);
-        numOfRooms = Random.Range(0, 10);
+        Debug.Log(numOfFloors);
+        // make an array to store the number of room per floor
+        // with the length of the arrey equal to the number of floors
+        int[] floorRooms = new int[numOfFloors];
 
-        Debug.Log("Floors = " + numOfFloors + " Rooms = " + numOfRooms);
+        int n = 0;
+        do
+        {
+            numOfRooms = Random.Range(1, 10);
+            floorRooms[n] = numOfRooms;
+            Debug.Log(floorRooms[n] + " Rooms");
+            n++;
+        } while (n < numOfFloors);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Start();
+        }
     }
 }

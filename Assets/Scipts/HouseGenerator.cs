@@ -18,7 +18,7 @@ public class HouseGenerator : MonoBehaviour
     {
         // random number generation
         numOfFloors = Random.Range(1, 4);
-        Debug.Log(numOfFloors);
+        Debug.Log(numOfFloors + " floors");
         // make an array to store the number of room per floor
         // with the length of the arrey equal to the number of floors
         int[] floorRooms = new int[numOfFloors];

@@ -64,7 +64,18 @@ public class HouseGenerator : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
+            ResetHouse();
             Start();
         }
+    }
+
+    void ResetHouse()
+    {
+        // destroy all the game objects spawned
+        for (int i = 0; i < currentHouseComp.Count; i++)
+        {
+            Destroy(currentHouseComp[i]);
+        }
+        currentHouseComp.Clear();
     }
 }

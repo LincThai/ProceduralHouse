@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2723451884807367735}
   - component: {fileID: 8545443561310338773}
   m_Layer: 0
-  m_Name: Terrain
+  m_Name: HouseGenerator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,4 +50,5 @@ MonoBehaviour:
   numOfRooms: 0
   floorTypes:
   - {fileID: 4595376520311714626, guid: 37213f2492539aa4a95901a15eaf27f1, type: 3}
-  roomTypes: []
+  roomTypes:
+  - {fileID: 7639298035454937775, guid: 11b01b9441f3c9247aa8f6eaec4d5a95, type: 3}

@@ -49,6 +49,6 @@ MonoBehaviour:
   floorType: 0
   numOfRooms: 0
   floorTypes:
-  - {fileID: 4595376520311714626, guid: 37213f2492539aa4a95901a15eaf27f1, type: 3}
+  - {fileID: 5355561849896911921, guid: 37213f2492539aa4a95901a15eaf27f1, type: 3}
   roomTypes:
   - {fileID: 7639298035454937775, guid: 11b01b9441f3c9247aa8f6eaec4d5a95, type: 3}

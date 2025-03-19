@@ -53,6 +53,8 @@ public class HouseGenerator : MonoBehaviour
                 // add to the list to later be destroyed 
                 GameObject room = Instantiate(roomTypes[Random.Range(0, roomTypes.Count)],
                     new Vector3(0, 0, 0), Quaternion.identity, floor.transform);
+                // calculate the position and move
+                room.transform.localPosition = new Vector3(j, 1, 0);
                 currentHouseComp.Add(room);
             }
 

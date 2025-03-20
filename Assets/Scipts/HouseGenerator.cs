@@ -44,7 +44,7 @@ public class HouseGenerator : MonoBehaviour
         for (int i = 0; i < floorRooms.Length; i++)
         {
             // spawn a floor every 3m then add to a list to later be destroyed
-            GameObject floor = Instantiate(floorTypes[floorType], new Vector3(0, i * 3, 0), Quaternion.identity);
+            GameObject floor = Instantiate(floorTypes[floorType], new Vector3(0, i * 3, 0), Quaternion.identity, transform);
             currentHouseComp.Add(floor);
 
             for (int j = 0; j < floorRooms[i]; j++)

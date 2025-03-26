@@ -29,7 +29,6 @@ public class HouseGenerator : MonoBehaviour
     {
         // random number generation
         numOfFloors = Random.Range(1, 4);
-        Debug.Log(numOfFloors + " floors");
         tower = new GameObject[3, 3, numOfFloors];
         floorType = Random.Range(0, floorTypes.Count);
         // make an array to store the number of room per floor
@@ -43,7 +42,6 @@ public class HouseGenerator : MonoBehaviour
             // assign a random numbers of rooms to each element of the array
             numOfRooms = Random.Range(1, 10);
             floorRooms[n] = numOfRooms;
-            Debug.Log(floorRooms[n] + " Rooms");
             n++;
         } while (n < numOfFloors);
 
@@ -54,7 +52,6 @@ public class HouseGenerator : MonoBehaviour
             GameObject floor = Instantiate(floorTypes[floorType],
                 new Vector3(0, i * floorHeight, 0), Quaternion.identity, transform);
             currentHouseComp.Add(floor);
-
 
             for (int j = 0; j < floorRooms[i]; j++)
             {
@@ -70,6 +67,12 @@ public class HouseGenerator : MonoBehaviour
                 room.transform.localPosition = new Vector3(x * roomSize, 1, y * roomSize);
             }
         }
+
+        // spawns roof
+        GameObject roof = Instantiate(floorTypes[floorType],
+            new Vector3(0, numOfFloors * floorHeight, 0), Quaternion.identity);
+
+        currentHouseComp.Add(roof);
     }
 
     // Update is called once per frame
@@ -87,11 +90,11 @@ public class HouseGenerator : MonoBehaviour
         // destroy all the game objects spawned
         for (int i = 0; i < currentHouseComp.Count; i++)
         {
-            int x = i % 3;
-            int y = Mathf.FloorToInt(i / 3);
+            //int x = i % 3;
+            //int y = Mathf.FloorToInt(i / 3);
 
             Destroy(currentHouseComp[i]);
-            Destroy(tower[i, i, i]);
+            //Destroy(tower[x, y, i]);
         }
         currentHouseComp.Clear();
     }

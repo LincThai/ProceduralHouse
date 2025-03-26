@@ -18,6 +18,7 @@ public class HouseGenerator : MonoBehaviour
     [Header("List of Generated Objects")]
     public List<GameObject> floorTypes = new List<GameObject>();
     public List<GameObject> roomTypes = new List<GameObject>();
+    public GameObject staircase;
 
     // hidden variables/data structures
     List<GameObject> currentHouseComp = new List<GameObject>();
@@ -53,6 +54,14 @@ public class HouseGenerator : MonoBehaviour
                 new Vector3(0, i * floorHeight, 0), Quaternion.identity, transform);
             currentHouseComp.Add(floor);
 
+            // spawn stairs
+            if (i + 1 < numOfFloors)
+            {
+                Debug.Log("Spawning Stairs");
+                GameObject stairs = Instantiate(staircase, new Vector3(0, 0, 0), Quaternion.identity, floor.transform);
+                stairs.transform.localPosition = new Vector3(1, 1, 1);
+            }
+
             for (int j = 0; j < floorRooms[i]; j++)
             {
                 int x = j % 3;
@@ -70,8 +79,8 @@ public class HouseGenerator : MonoBehaviour
 
         // spawns roof
         GameObject roof = Instantiate(floorTypes[floorType],
-            new Vector3(0, numOfFloors * floorHeight, 0), Quaternion.identity);
-
+            new Vector3(0, numOfFloors * floorHeight, 0), Quaternion.identity, transform);
+        // adds roof to list
         currentHouseComp.Add(roof);
     }
 

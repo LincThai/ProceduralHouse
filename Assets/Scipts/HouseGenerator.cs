@@ -57,8 +57,8 @@ public class HouseGenerator : MonoBehaviour
             // spawn stairs
             if (i + 1 < numOfFloors)
             {
-                Debug.Log("Spawning Stairs");
                 GameObject stairs = Instantiate(staircase, new Vector3(0, 0, 0), Quaternion.identity, floor.transform);
+                // set position
                 stairs.transform.localPosition = new Vector3(1, 1, 1);
             }
 

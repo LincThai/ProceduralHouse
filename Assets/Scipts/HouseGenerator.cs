@@ -59,7 +59,7 @@ public class HouseGenerator : MonoBehaviour
             {
                 GameObject stairs = Instantiate(staircase, new Vector3(0, 0, 0), Quaternion.identity, floor.transform);
                 // set position
-                stairs.transform.localPosition = new Vector3(1, 1, 1);
+                stairs.transform.localPosition = new Vector3(1, 1.5f, 1);
             }
 
             for (int j = 0; j < floorRooms[i]; j++)

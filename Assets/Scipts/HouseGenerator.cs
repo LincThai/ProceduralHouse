@@ -5,8 +5,8 @@ public class HouseGenerator : MonoBehaviour
 {
     // editable values
     [Header("Editable Values")]
-    public int floorHeight = 3;
-    public int roomSize = 3;
+    public float floorHeight = 3;
+    public float roomSize = 3;
 
     // numbers for random generation
     [Header("Randomly Generated Values")]
@@ -41,7 +41,7 @@ public class HouseGenerator : MonoBehaviour
         do
         {
             // assign a random numbers of rooms to each element of the array
-            numOfRooms = Random.Range(1, 10);
+            numOfRooms = Random.Range(1, 17);
             floorRooms[n] = numOfRooms;
             n++;
         } while (n < numOfFloors);

@@ -137,11 +137,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9213679849926328377, guid: a19b6a91f17356a44917f1cf50e1dd70, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9213679849926328377, guid: a19b6a91f17356a44917f1cf50e1dd70, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 9213679849926328377, guid: a19b6a91f17356a44917f1cf50e1dd70, type: 3}
       propertyPath: m_LocalRotation.w
@@ -227,6 +227,10 @@ PrefabInstance:
     - target: {fileID: 6490896370094428488, guid: e835f50b76bf24b4ea98a2a05628b221, type: 3}
       propertyPath: m_Name
       value: HouseGenerator
+      objectReference: {fileID: 0}
+    - target: {fileID: 8545443561310338773, guid: e835f50b76bf24b4ea98a2a05628b221, type: 3}
+      propertyPath: roomSize
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

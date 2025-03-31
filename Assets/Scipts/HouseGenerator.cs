@@ -5,8 +5,9 @@ public class HouseGenerator : MonoBehaviour
 {
     // editable values
     [Header("Editable Values")]
-    public float floorHeight = 3;
-    public float roomSize = 3;
+    public int floorHeight = 3;
+    public int roomSize = 3;
+    public int numOfSlots = 4;
 
     // numbers for random generation
     [Header("Randomly Generated Values")]
@@ -30,7 +31,7 @@ public class HouseGenerator : MonoBehaviour
     {
         // random number generation
         numOfFloors = Random.Range(1, 4);
-        tower = new GameObject[3, 3, numOfFloors];
+        tower = new GameObject[numOfSlots, numOfSlots, numOfFloors];
         floorType = Random.Range(0, floorTypes.Count);
         // make an array to store the number of room per floor
         // with the length of the arrey equal to the number of floors
@@ -64,8 +65,8 @@ public class HouseGenerator : MonoBehaviour
 
             for (int j = 0; j < floorRooms[i]; j++)
             {
-                int x = j % 3;
-                int y = Mathf.FloorToInt(j / 3);
+                int x = j % roomSize;
+                int y = Mathf.FloorToInt(j / roomSize);
                 // spawn room as child of the floor then change transform.localPosition then
                 // add to the list to later be destroyed 
                 GameObject room = Instantiate(roomTypes[Random.Range(0, roomTypes.Count)],
@@ -73,7 +74,7 @@ public class HouseGenerator : MonoBehaviour
 
                 tower[x, y, i] = room;
                 // calculate the position and move
-                room.transform.localPosition = new Vector3(x * roomSize, 1, y * roomSize);
+                room.transform.localPosition = new Vector3(x * roomSize, 0, y * roomSize);
             }
         }
 

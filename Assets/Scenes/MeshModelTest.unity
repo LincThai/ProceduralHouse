@@ -2790,10 +2790,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 7424292256920778092, guid: a19b6a91f17356a44917f1cf50e1dd70, type: 3}
-      propertyPath: m_Radius
-      value: 0.4
-      objectReference: {fileID: 0}
     - target: {fileID: 9213679849926328377, guid: a19b6a91f17356a44917f1cf50e1dd70, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3

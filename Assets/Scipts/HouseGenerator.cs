@@ -26,13 +26,15 @@ public class HouseGenerator : MonoBehaviour
 
     GameObject[,,] tower;
 
+    bool hasStairs = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         // random number generation
         numOfFloors = Random.Range(1, 4);
         tower = new GameObject[numOfSlots, numOfSlots, numOfFloors];
-        floorType = Random.Range(0, floorTypes.Count);
+        //floorType = Random.Range(0, floorTypes.Count);
         // make an array to store the number of room per floor
         // with the length of the arrey equal to the number of floors
         int[] floorRooms = new int[numOfFloors];
@@ -50,6 +52,14 @@ public class HouseGenerator : MonoBehaviour
         
         for (int i = 0; i < floorRooms.Length; i++)
         {
+            if (i % 2 == 0)
+            {
+                floorType = 0;
+            }
+            else
+            {
+                floorType = 1;
+            }
             // spawn a floor every 3m then add to a list to later be destroyed
             GameObject floor = Instantiate(floorTypes[floorType],
                 new Vector3(0, i * floorHeight, 0), Quaternion.identity, transform);
@@ -60,13 +70,24 @@ public class HouseGenerator : MonoBehaviour
             {
                 GameObject stairs = Instantiate(staircase, new Vector3(0, 0, 0), Quaternion.identity, floor.transform);
                 // set position
-                stairs.transform.localPosition = new Vector3(1, 0, 3);
+                stairs.transform.localPosition = new Vector3(1.5f, 0, -1.5f);
+                // check if odd/even
+                if (i % 2 == 0)
+                {
+                    stairs.transform.localPosition = new Vector3(3.5f, 0, -1.5f);
+                }
+            }
+            // open whole
+            if(i-1 >= 0)
+            {
+                // deactivate the whole for the staircase
+                floor.transform.Find("StairWhole").gameObject.SetActive(false);
             }
 
             for (int j = 0; j < floorRooms[i]; j++)
             {
-                int x = j % roomSize;
-                int y = Mathf.FloorToInt(j / roomSize);
+                int x = j % numOfSlots;
+                int y = Mathf.FloorToInt(j / numOfSlots);
                 // spawn room as child of the floor then change transform.localPosition then
                 // add to the list to later be destroyed 
                 GameObject room = Instantiate(roomTypes[Random.Range(0, roomTypes.Count)],
@@ -74,7 +95,7 @@ public class HouseGenerator : MonoBehaviour
 
                 tower[x, y, i] = room;
                 // calculate the position and move
-                room.transform.localPosition = new Vector3(x * roomSize, 0, y * roomSize);
+                room.transform.localPosition = new Vector3(x * roomSize, 0, y * -roomSize);
             }
         }
 

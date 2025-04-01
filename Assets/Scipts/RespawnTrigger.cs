@@ -11,6 +11,7 @@ public class RespawnTrigger : MonoBehaviour
         {
             // move player to that position
             other.gameObject.transform.position = respawnPosition.position;
+            Debug.Log("respawn");
         }
     }
 }

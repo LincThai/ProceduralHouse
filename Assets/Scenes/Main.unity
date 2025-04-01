@@ -228,10 +228,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: HouseGenerator
       objectReference: {fileID: 0}
-    - target: {fileID: 8545443561310338773, guid: e835f50b76bf24b4ea98a2a05628b221, type: 3}
-      propertyPath: roomSize
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

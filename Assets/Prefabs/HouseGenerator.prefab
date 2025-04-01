@@ -45,7 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floorHeight: 3
-  roomSize: 3
+  roomSize: 5
+  numOfSlots: 4
   numOfFloors: 0
   floorType: 0
   numOfRooms: 0
